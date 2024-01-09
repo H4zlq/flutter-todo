@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:todo_app/app/shared/components/todo_app_bar.dart';
 
 /* Application structures */
 
@@ -7,16 +7,12 @@ import 'package:provider/provider.dart';
 import '../shared/components/todo_list.dart';
 import '../shared/components/todo_dialog.dart';
 
-// Contexts
-import '../contexts/theme_context.dart';
-
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    var themeProvider = Provider.of<ThemeContext>(context);
 
     return Scaffold(
         drawer: Drawer(
@@ -44,23 +40,7 @@ class HomeScreen extends StatelessWidget {
             ],
           ),
         ),
-        appBar: AppBar(
-            title: const Text('Todos'),
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            actions: [
-              IconButton(
-                onPressed: themeProvider.toggleTheme,
-                icon: themeProvider.isDark
-                    ? const Icon(
-                        Icons.brightness_7,
-                        color: Colors.white,
-                      )
-                    : const Icon(
-                        Icons.brightness_4,
-                        color: Colors.black,
-                      ),
-              ),
-            ]),
+        appBar: const TodoAppBar(title: 'Todo Management'),
         body: const TodoList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
