@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:todo_app/app/shared/components/todo_app_bar.dart';
 
 /* Application structures */
 
@@ -17,9 +18,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Settings'),
-      ),
+      appBar: const TodoAppBar(title: 'Settings'),
       body: Consumer<ThemeContext>(
         builder: (context, provider, child) {
           return ListView(
