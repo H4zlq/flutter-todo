@@ -14,7 +14,7 @@ final ThemeData lightTheme = ThemeData(
 final ThemeData darkTheme = ThemeData(
   // Define the default brightness and colors.
   colorScheme: ColorScheme.fromSeed(
-    seedColor: Colors.deepOrange,
+    seedColor: Colors.deepPurple,
     // ···
     brightness: Brightness.dark,
   ),
